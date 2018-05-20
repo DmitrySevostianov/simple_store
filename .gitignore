@@ -1,0 +1,6 @@
+*.pyc
+*~
+__pycache__
+app.db
+config.py
+hw05_venv

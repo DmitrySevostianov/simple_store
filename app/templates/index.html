@@ -1,0 +1,20 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} simple store</title>
+        {% else %}
+        <title>Welcome to simple store</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Привет, {{ user.username }}!</h1>
+        {% for product in products %}
+        <div><p> <a href="{{ url_for(product.item.itemname) }}">{{ product.item.itemname }} </a> is <b>{{ product.body }}</b> <br> Price is {{ product.price}} $</p></div>
+        {% endfor %}
+
+        <h1>Привет, {{ user.username }}  !  This is new hrefs !</h1>
+        {% for product in products %}
+        <div><p> <a href="{{ url_for('explore_product', product_name = product.item.itemname) }}">{{ product.item.itemname }} </a> is <b>{{ product.body }}</b> <br> Price is {{ product.price}} $</p></div>
+        {% endfor %}
+    </body>
+</html>
