@@ -9,6 +9,6 @@
 - Установка: <br>
 
 ```sh
- git clone ...
+ git clone https://github.com/DmitrySevostianov/simple_store.git
 ```
 
