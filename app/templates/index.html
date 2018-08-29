@@ -1,19 +1,27 @@
-<html>
-    
-    <head>
+{% extends "base.html" %}
+
+
+    {% block head %}
         {% if title %}
         <title>{{ title }} simple store</title>
         {% else %}
         <title>Welcome to simple store</title>
         {% endif %}
-    </head>
+    {% endblock %}
 
-    <body>
+    {% block content %}
 
-        <h1>Привет, {{ user.username }} !</h1>
+
         {% for product in products %}
-        <div><p> <a href="{{ url_for('explore_product', product_name = product.item.itemname) }}">{{ product.item.itemname }} </a> is <b>{{ product.body }}</b> <br> Price is {{ product.price}} $</p></div>
+        <div>
+            <p> <a href="{{ url_for('explore_product', product_id = product.id) }}">{{ product.item.itemname }} </a> is <b>{{ product.body }}</b> <br> Price is {{ product.price}} $</p>
+        </div>
+
+        <p>
+          <a class="btn btn-lg btn-primary" href="{{ url_for('explore_product',  product_id = product.id) }}" role="button">Detail &raquo;</a>
+        </p>
         {% endfor %}
 
-    </body>
-</html>
+
+
+    {% endblock %}

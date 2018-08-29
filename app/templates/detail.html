@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+    {% block head %}
+        {% if title %}
+        <title>{{ title }} simple store</title>
+        {% else %}
+        <title>Welcome to simple store</title>
+        {% endif %}
+    {% endblock %}
+
+    {% block content %}
+
+
+        
+        <div>
+            <p> {{ product.item.itemname }} is <b>{{ product.body }}</b> <br> Price is {{ product.price}} ___ $</p>
+        </div>
+
+
+    {% endblock %}
